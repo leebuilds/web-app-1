@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Poll MVP — Results</title>
+    <link rel="stylesheet" href="/css/styles.css" />
+  </head>
+  <body>
+    <header class="app-header">
+      <div class="container">
+        <a class="brand" href="/">Poll MVP</a>
+        <span class="muted">Results</span>
+      </div>
+    </header>
+
+    <main class="container">
+      <div id="banner" class="banner"></div>
+
+      <div class="card">
+        <h1 id="poll-title">Loading results…</h1>
+        <p class="muted" id="poll-description"></p>
+        <p class="muted" id="total-votes"></p>
+        <div id="results"></div>
+        <div class="btn-row" style="margin-top: var(--space-4);">
+          <a class="btn btn-secondary" id="vote-link" href="#">Back to poll</a>
+          <button class="btn btn-ghost" id="refresh">Refresh</button>
+        </div>
+      </div>
+    </main>
+
+    <script src="/js/results.js"></script>
+  </body>
+</html>

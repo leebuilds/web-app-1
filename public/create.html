@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Poll MVP — Create a Poll</title>
+    <link rel="stylesheet" href="/css/styles.css" />
+  </head>
+  <body>
+    <header class="app-header">
+      <div class="container">
+        <a class="brand" href="/">Poll MVP</a>
+        <div class="btn-row">
+          <span class="muted" id="current-user"></span>
+          <button type="button" id="logout-btn" class="btn btn-secondary">Log out</button>
+        </div>
+      </div>
+    </header>
+
+    <main class="container">
+      <div class="btn-row" style="margin-bottom: var(--space-4);">
+        <a class="btn btn-ghost" href="/">&larr; Back to dashboard</a>
+      </div>
+
+      <h1>Create a poll</h1>
+      <p class="muted">
+        Build a poll, then share its ID or link so others can vote.
+      </p>
+
+      <div id="banner" class="banner"></div>
+
+      <div class="card" id="share-card" style="display: none;">
+        <h2>Poll created!</h2>
+        <p class="muted">
+          Send this poll ID to participants — they can enter it on the
+          dashboard under “Join a poll”.
+        </p>
+        <div class="field">
+          <label for="share-code">Poll ID</label>
+          <div class="share-box">
+            <input type="text" id="share-code" readonly />
+            <button type="button" id="copy-code" class="btn btn-secondary">Copy ID</button>
+          </div>
+        </div>
+        <div class="field">
+          <label for="share-link">Direct link</label>
+          <div class="share-box">
+            <input type="text" id="share-link" readonly />
+            <button type="button" id="copy-link" class="btn btn-secondary">Copy link</button>
+          </div>
+        </div>
+        <div class="btn-row">
+          <a class="btn btn-primary" id="open-poll" href="#">Open voting page</a>
+          <a class="btn btn-ghost" href="/">Back to dashboard</a>
+        </div>
+      </div>
+
+      <div class="card">
+        <form id="poll-form">
+          <div class="field">
+            <label for="title">Poll title</label>
+            <input type="text" id="title" name="title" placeholder="What should we build next?" required />
+          </div>
+
+          <div class="field">
+            <label for="description">Description (optional)</label>
+            <textarea id="description" name="description" placeholder="Add context for participants"></textarea>
+          </div>
+
+          <div class="field">
+            <label>Options</label>
+            <div id="options">
+              <div class="option-row">
+                <input type="text" class="option-input" placeholder="Option 1" />
+              </div>
+              <div class="option-row">
+                <input type="text" class="option-input" placeholder="Option 2" />
+              </div>
+            </div>
+            <button type="button" id="add-option" class="btn btn-ghost">+ Add option</button>
+          </div>
+
+          <div class="field checkbox-row">
+            <input type="checkbox" id="allow-multiple" />
+            <label for="allow-multiple">Allow multiple choices</label>
+          </div>
+
+          <div class="field">
+            <label for="visibility">Results visibility</label>
+            <select id="visibility" style="padding: var(--space-3); border-radius: var(--radius-sm); border: 1px solid var(--color-border);">
+              <option value="after_vote">Show results after voting</option>
+              <option value="always">Always show results</option>
+              <option value="closed_only">Only owner sees results</option>
+            </select>
+          </div>
+
+          <div class="btn-row">
+            <button type="submit" class="btn btn-primary">Create poll</button>
+          </div>
+        </form>
+      </div>
+    </main>
+
+    <script src="/js/auth.js"></script>
+    <script src="/js/create.js"></script>
+  </body>
+</html>

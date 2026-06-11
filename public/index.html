@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Poll MVP — Dashboard</title>
+    <link rel="stylesheet" href="/css/styles.css" />
+  </head>
+  <body>
+    <header class="app-header">
+      <div class="container">
+        <a class="brand" href="/">Poll MVP</a>
+        <div class="btn-row">
+          <span class="muted" id="current-user"></span>
+          <button type="button" id="logout-btn" class="btn btn-secondary">Log out</button>
+        </div>
+      </div>
+    </header>
+
+    <main class="container">
+      <h1 id="greeting">Dashboard</h1>
+      <p class="muted">Create a new poll, or join one with a poll ID.</p>
+
+      <div id="banner" class="banner"></div>
+
+      <div class="action-grid">
+        <div class="card action-card">
+          <h2>Create a poll</h2>
+          <p class="muted">
+            Build a poll with your own options and settings, then share its ID
+            so others can vote.
+          </p>
+          <div class="btn-row">
+            <a class="btn btn-primary" href="/create.html">Create poll</a>
+          </div>
+        </div>
+
+        <div class="card action-card">
+          <h2>Join a poll</h2>
+          <p class="muted">
+            Got a poll ID or link from someone? Enter it here to go straight to
+            voting.
+          </p>
+          <form id="join-form" class="share-box" style="margin-top: 0;">
+            <input
+              type="text"
+              id="join-input"
+              placeholder="e.g. 7KQ2MX or a poll link"
+              aria-label="Poll ID or link"
+            />
+            <button type="submit" class="btn btn-primary">Join</button>
+          </form>
+        </div>
+      </div>
+
+      <section class="card">
+        <h2>Polls you created</h2>
+        <div id="my-polls"></div>
+      </section>
+    </main>
+
+    <script src="/js/auth.js"></script>
+    <script src="/js/home.js"></script>
+  </body>
+</html>
